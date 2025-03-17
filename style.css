@@ -1,0 +1,22 @@
+*, ::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+body{
+    font-size: 1.2rem;
+    padding: 30px;
+}
+body p{
+    font-size: clamp(2vw, 1.7rem, 4vw);
+}
+form .checkbox{
+    display: flex;
+    gap:30px;
+    padding: 10px;
+}
+form input[type="checkbox"], form input[type="radio"]{
+  width: 20px;
+  height: 20px;
+}

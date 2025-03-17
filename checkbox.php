@@ -25,24 +25,27 @@ if (!empty($_POST)) {
 <body>
     <form action="post">
         <P>quelle langage de programmation prefere vous?</P>
-        <label for="">php
-            <input type="checkbox" name="languages[]" id="" value="">
+        <div class="checkbox">
+        <label for="php">php
         </label>
-        <label for="">Laravel
-            <input type="checkbox" name="languages[]" id="" value="">
+        <input type="checkbox" name="languages[]" id="php" value="">
+        <label for="laravel">Laravel
         </label>
-        <input type="checkbox" name="languages[]" id="" value="">
-        <label for="">python
+        <input type="checkbox" name="languages[]" id="laravel" value="">
+        <label for="python">python
         </label>
-        <input type="checkbox" name="languages[]" id="" value="">
-        
-        
+        <input type="checkbox" name="languages[]" id="python" value="">
+     
+        </div>
+
         <p>Quelle est votre sexe?</p>
         <label for="maxculin">Maxculin</label>
         <input type="radio" name="sexe" id="maxculin">
         <label for="feminin">feminin</label>
         <input type="radio" name="sexe" id="feminin">
         <input type="submit" value="valider" name='valider'>
+
+
     </form>
 </body>
 
