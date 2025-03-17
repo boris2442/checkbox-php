@@ -39,10 +39,12 @@ if (!empty($_POST)) {
         </div>
 
         <p>Quelle est votre sexe?</p>
+        <div class="radio">
         <label for="maxculin">Maxculin</label>
         <input type="radio" name="sexe" id="maxculin">
         <label for="feminin">feminin</label>
         <input type="radio" name="sexe" id="feminin">
+        </div>
         <input type="submit" value="valider" name='valider'>
 
 

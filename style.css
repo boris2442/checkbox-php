@@ -11,7 +11,7 @@ body{
 body p{
     font-size: clamp(2vw, 1.7rem, 4vw);
 }
-form .checkbox{
+form .checkbox, form .radio{
     display: flex;
     gap:30px;
     padding: 10px;
