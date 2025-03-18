@@ -1,38 +1,42 @@
 <?php
-// if (!empty($_POST)) {
-//     if (!empty($_POST['languages'])) {
-//         $languages = $_POST['languages'];
-//         $languages_str = implode(",", $languages);
 
-//         $sql = "INSERT INTO `users` (languages) VALUES(:languages)";
-//         $requete = $db->prepare($sql);
-//         $requete->bindValue(':languages', $languages);
-//         $requete->execute();
-//     }
-// }
+// echo phpinfo();
+// die;
+
 require_once "connexion.php";
 if (!empty($_POST)) {
-    if (isset($_POST['languages'])) {
-        // $languages = $_POST['languages'];
-        // $languages_str = implode("/", $languages);
-
-        // $sql = "INSERT INTO avis (checkbox) VALUES(:checkbox)";
-        // $requete = $db->prepare($sql);
-        // $requete->bindValue(':checkbox', $languages_str, PDO::PARAM_STR_CHAR);
-        // $requete->execute();
+    $languages_str = "";
+    $sexe = "";
+    $passeTemps = "";
+    if (isset($_POST['languages']) && is_array($_POST['languages'])) {
 
 
 
         $languages = $_POST['languages'];
         $languages_str = implode(",", $languages);
-        echo $languages_str;
+        // echo $languages_str;
     }
     if (isset($_POST['sexe'])) {
-        echo $_POST['sexe'];
+        // echo $_POST['sexe'];
+        $sexe = $_POST['sexe'];
     }
-    if (isset($_POST['passeTempsFavoris'])) {
-        echo $_POST['passeTempsFavoris'];
+    if (isset($_POST['passeTemps'])) {
+        // echo $_POST['passeTempsFavoris'];
+        $passeTemps = $_POST['passeTemps'];
     }
+    $sql = "INSERT INTO  `avis2` (`checkbox`, `radio`, `select`) VALUES (:languages_str, :sexe, :passeTemps)";
+    // echo "inserer avec successful";
+    $requete = $db->prepare($sql);
+    $requete->bindValue(':languages_str', $languages_str, PDO::PARAM_STR_CHAR);
+    $requete->bindValue(':sexe', $sexe, PDO::PARAM_STR_CHAR);
+    $requete->bindValue(':passeTemps', $passeTemps, PDO::PARAM_STR_CHAR);
+    if ($requete->execute()) {
+        echo "insertion avec successful";
+    } else {
+     
+        echo "echec de l'insertion";
+    }
+    // header("Location: affichage.php");
 }
 
 ?>
@@ -71,10 +75,10 @@ if (!empty($_POST)) {
         </div>
 
         <p>Quelle est votre passe temps favoris?</p>
-        <select name="passeTempsFavoris" id="">
+        <select name="passeTemps" id="">
             <option value="coder">coder</option>
-            <option value="jouer au foot">jouer au foot</option>
-            <option value="effectuer-des-recherches">effectuer des recherches</option>
+            <option value="jouer_au_foot">jouer au foot</option>
+            <option value="effectuer_des_recherches">effectuer des recherches</option>
         </select><br>
         <input type="submit" value="valider" name='valider'>
 
