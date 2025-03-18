@@ -7,6 +7,7 @@
 body{
     font-size: 1.2rem;
     padding: 30px;
+
 }
 body p{
     font-size: clamp(2vw, 1.7rem, 4vw);
@@ -19,4 +20,11 @@ form .checkbox, form .radio{
 form input[type="checkbox"], form input[type="radio"]{
   width: 20px;
   height: 20px;
+}
+form input[type='submit']{
+    padding: 5px 55px;
+    margin-top: 30px;
+}
+form select{
+padding: 6px 10px;
 }

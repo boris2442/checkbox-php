@@ -75,7 +75,7 @@ if (!empty($_POST)) {
             <option value="coder">coder</option>
             <option value="jouer au foot">jouer au foot</option>
             <option value="effectuer-des-recherches">effectuer des recherches</option>
-        </select>
+        </select><br>
         <input type="submit" value="valider" name='valider'>
 
 
