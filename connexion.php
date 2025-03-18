@@ -5,12 +5,15 @@ define("DBPASS", "");
 define("DBNAME", "checkbox");
 
 
-$dsn="mysql:host=".DBHOST."; name=".DBNAME;
 
+$dsn="mysql:dbname=".DBNAME."; host=".DBHOST;
 try{
     $db=new PDO($dsn, DBUSER, DBPASS);
+    $db->exec("SET NAMES utf8");
+    echo "connexin a la database reussie";
 
-}catch(PDOException ){
+}catch(PDOException $e){
+    die($e->getMessage());
     echo "mauvaise connexion a la database!";
 }
 
