@@ -2,7 +2,7 @@
 require_once "connexion.php";
 
 if (!empty($_POST) && isset($_FILES["file"])) {
-    // Vérifier si un fichier a été téléchargé sans erreur
+
     if ($_FILES["file"]["error"] === UPLOAD_ERR_OK) {
         $nom = $_FILES["file"]["name"];
         $taille = $_FILES["file"]["size"];
@@ -10,11 +10,11 @@ if (!empty($_POST) && isset($_FILES["file"])) {
         $bin = file_get_contents($_FILES["file"]["tmp_name"]);
 
         try {
-            // Préparer la requête SQL
+           
             $sql = "INSERT INTO `images` (`nom`, `taille`, `type`, `bin`) VALUES (?, ?, ?, ?)";
             $requete = $db->prepare($sql);
 
-            // Exécuter la requête avec les données
+           
             $requete->execute([$nom, $taille, $type, $bin]);
 
             echo "Image téléchargée et enregistrée avec succès.";
