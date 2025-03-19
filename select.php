@@ -33,7 +33,7 @@ require_once "header.php";
                 <td><?php echo htmlspecialchars($user["nom"]) ?></td>
                 <td><?php echo htmlspecialchars($user["taille"]) ?></td>
                 <td><?php echo htmlspecialchars($user["type"]) ?></td>
-                <td><img src="data:<?= htmlspecialchars($user['type']) ?>;base64,<?= base64_encode($user['bin']) ?>" alt="<?= htmlspecialchars($user['nom']) ?>" width="100"></td>
+                <td><img src="data:<?= htmlspecialchars($user['type']) ?>;base64,<?= base64_encode($user['bin']) ?>" alt=" image de <?= htmlspecialchars($user['nom']) ?>" width="100"></td>
             </tr>
         <?php endforeach;  ?>
     </tbody>
@@ -42,4 +42,3 @@ require_once "header.php";
 
 
 
-//
