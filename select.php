@@ -39,6 +39,3 @@ require_once "header.php";
     </tbody>
 </table>
 </body>
-
-
-

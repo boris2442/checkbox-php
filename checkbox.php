@@ -27,30 +27,30 @@ if (!empty($_POST)) {
     $sql = "INSERT INTO  `avis2` (`checkbox`, `radio`, `select`) VALUES (:languages_str, :sexe, :passeTemps)";
     // echo "inserer avec successful";
     $requete = $db->prepare($sql);
-    // $requete->bindValue(':languages_str', $languages_str, PDO::PARAM_STR);
-    // $requete->bindValue(':sexe', $sexe, PDO::PARAM_STR);
-    // $requete->bindValue(':passeTemps', $passeTemps, PDO::PARAM_STR);
-    $result = $requete->execute(
-        [
-            "languages_str" => $languages_str,
-            "sexe" => $sexe,
-            "passeTemps" => $passeTemps
-        ]
-    );
-    // $result = $requete->execute(["languages_str"=>$languages_str]);
-    // $result = $requete->execute(["languages_str"=>$languages_str]);
-    if (
-        $result
-    ) {
-        // $requete->bindValue(':passeTemps', $passeTemps, PDO::PARAM_STR);
-        var_dump($requete);
-        echo "insertion avec successful";
-    } else {
+    $requete->bindValue(':languages_str', $languages_str, PDO::PARAM_STR);
+    $requete->bindValue(':sexe', $sexe, PDO::PARAM_STR);
+    $requete->bindValue(':passeTemps', $passeTemps, PDO::PARAM_STR);
+    // $result = $requete->execute(
+    //     [
+    //         "languages_str" => $languages_str,
+    //         "sexe" => $sexe,
+    //         "passeTemps" => $passeTemps
+    //     ]
+    // );
+    $requete->execute();
 
-        echo "echec de l'insertion";
-        print_r($requete->errorInfo());
-    }
-    // header("Location: affichage.php");
+    // if (
+    //     $result
+    // ) {
+
+    //     var_dump($requete);
+    //     echo "insertion avec successful";
+    // } else {
+
+    //     echo "echec de l'insertion";
+    //     print_r($requete->errorInfo());
+    // }
+
 }
 
 ?>
